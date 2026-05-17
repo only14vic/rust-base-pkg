@@ -33,14 +33,14 @@ __(зависит от libapp_b.so)__
 
 ### Команды
 
-`target/release/app` - вывод справки программы *app*
+- `target/release/app` - вывод справки программы *app*
 
-`target/release/app -L app_a a` - загрузка библиотеки libapp_a.so и выполнение
-команды *a* из модуля *MOD_A* (модуль *MOD_A* подзагрузит модуль *MOD_B* из
-*libapp_b.so* автоматически так как прописана зависимость модуля *MOD_A* от *MOD_B*)
+- `target/release/app -L app_a a` - загрузка библиотеки libapp_a.so и выполнение
+команды *a* из модуля __MOD_A__ (модуль *MOD_A* подзагрузит модуль __MOD_B__ из
+*libapp_b.so* автоматически так как прописана зависимость модуля __MOD_A__ от __MOD_B__)
 
-`target/release/app -L app_b b` - загрузка библиотеки libapp_b.so и выполнение
-команды *b* из модуля *MOD_B*
+- `target/release/app -L app_b b` - загрузка библиотеки libapp_b.so и выполнение
+команды *b* из модуля __MOD_B__
 
 ### Примечание
 
