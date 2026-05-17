@@ -1,0 +1,27 @@
+[package]
+name    = "app-example-b"
+version = "1.0.0"
+edition = "2024"
+
+[lints]
+workspace = true
+
+[lib]
+path       = "src/lib.rs"
+name       = "app_b"
+crate-type = ["cdylib"]
+
+[features]
+default = ["std"]
+std     = ["app-base/std", "app-kernel/std"]
+
+[dependencies]
+app-base   = { workspace = true }
+app-kernel = { workspace = true }
+log        = { workspace = true }
+indexmap   = { workspace = true }
+yansi      = { workspace = true }
+libc       = { workspace = true }
+
+[dev-dependencies]
+app-testing = { workspace = true }

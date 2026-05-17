@@ -1,0 +1,49 @@
+[package]
+name    = "app"
+version = "1.0.0"
+edition = "2024"
+
+[lints]
+workspace = true
+
+[lib]
+path       = "src/lib.rs"
+name       = "app"
+crate-type = ["cdylib", "lib"]
+
+[[bin]]
+path = "src/bin/main.rs"
+name = "app"
+
+[features]
+default = ["std"]
+std     = ["app-base/std", "app-kernel/async", "dep:app-common"]
+bind    = ["app-kernel/bind"]
+
+[build-dependencies]
+cc       = { workspace = true }
+bindgen  = { workspace = true }
+cbindgen = { workspace = true }
+log      = { workspace = true }
+dotenv   = { workspace = true }
+
+[target.x86_64-unknown-linux-gnu.dependencies]
+app-example-a = { path = "crates/a", optional = true }
+app-example-b = { path = "crates/b", optional = true }
+
+[dependencies]
+app-base   = { workspace = true }
+app-kernel = { workspace = true }
+app-common = { workspace = true, optional = true }
+libc       = { workspace = true }
+log        = { workspace = true }
+ahash      = { workspace = true }
+indexmap   = { workspace = true }
+serde      = { workspace = true }
+serde_json = { workspace = true }
+spin       = { workspace = true }
+tokio      = { workspace = true }
+futures    = { workspace = true }
+
+[dev-dependencies]
+app-testing = { workspace = true }
