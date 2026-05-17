@@ -1,0 +1,48 @@
+#HELP:
+
+Usage: {bin} <command> [options] -- [bin-command] [bin-options]
+
+Commands:
+    c,config   - show configuration
+    s,serve    - run web server
+    q,queue    - run queue processing service
+    d,desktop  - run desktop application
+    m,migrator - SQL migration files control
+
+Options:
+    --log-level <level>         - set logging level:
+                                  off, error, warn, info, debug, trace
+    --log-filter <name,..>      - filter logging by name(s)
+    --log-file <file>           - write logging to file
+    --log-color <bool>          - enable/disable logging color
+    --lang <value>              - use specified language
+    --tz <value>                - use specified timezone
+    --ld-path <dir>             - path to *.so modules
+    -L --ld-lib <lib,..>        - list library name(s) to load
+    -M --ld-mod <module,..>     - list module name(s) to load
+    -N --ld-no                  - disable loading modules
+    -C --config-file <file>     - load config options from file
+    -E --env-file <file>        - load environments from file
+    -P --pid-file <file>        - save PID to file
+    -A --application            - dump App on shutdown
+    -D --debug                  - enable debuging
+    -V --version                - show current version
+    -v --verbose                - enable verbose output
+    -f --force                  - force execution
+    -h --help                   - show usage help
+
+Async options:
+    --tokio-threads <count>                  - count of tokio threads
+    --tokio-blocking-threads <count>         - count of tokio blocking threads
+    --tokio-blocking-threads-lifetime <secs> - lifetime of tokio blocking threads
+
+Database options:
+    --db-url <url>                      - db connection url
+    --db-schema <name>                  - default db schema
+    --db-min-conn <count>               - min db connections
+    --db-max-conn <count>               - max db connections
+    --db-acquire-timeout <seconds>      - acquire timeout seconds
+    --db-idle-timeout <seconds>         - idle timeout seconds
+    --db-max-lifetime                   - max db connection lifetime
+
+Version: {name} {version}
