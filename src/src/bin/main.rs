@@ -27,11 +27,6 @@ unsafe extern "C" {
 
 #[cfg(feature = "std")]
 fn main() -> Void {
-    #[cfg(prefer_dynamic)]
-    unsafe {
-        app_main(&[MOD_MAIN()])
-    }
-    #[cfg(not(prefer_dynamic))]
     App::new(&[MOD_MAIN()])?.run(None).void()
 }
 
