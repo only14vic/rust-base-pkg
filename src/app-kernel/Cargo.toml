@@ -1,0 +1,67 @@
+[package]
+name    = "app-kernel"
+version = "1.0.0"
+edition = "2024"
+
+[lints]
+workspace = true
+
+[lib]
+path       = "src/lib.rs"
+name       = "app_kernel"
+crate-type = ["cdylib", "lib"]
+
+[[bin]]
+path = "src/bin/app-kernel.rs"
+name = "app-kernel"
+
+#[[bin]]
+#path = "src/bin/app-kernel-c.rs"
+#name = "app-kernel-c"
+
+[[bench]]
+name    = "bench_app"
+path    = "benches/bench_app.rs"
+harness = false
+
+[features]
+default = ["std"]
+std     = ["app-base/std", "dep:criterion"]
+async   = ["std", "dep:tokio", "dep:actix", "dep:futures"]
+bind    = ["app-base/bind"]
+
+[build-dependencies]
+cc          = { workspace = true }
+bindgen     = { workspace = true }
+cbindgen    = { workspace = true }
+log         = { workspace = true }
+dotenv      = { workspace = true }
+chrono      = { workspace = true }
+glob        = { workspace = true }
+compression = { workspace = true }
+
+[dependencies]
+app-base    = { workspace = true }
+libc        = { workspace = true }
+libc_alloc  = { workspace = true }
+libc-print  = { workspace = true }
+ahash       = { workspace = true }
+indexmap    = { workspace = true }
+numtoa      = { workspace = true }
+log         = { workspace = true }
+yansi       = { workspace = true }
+spin        = { workspace = true }
+libloading  = { workspace = true }
+compression = { workspace = true }
+zerocopy    = { workspace = true }
+# required "std" lib
+criterion = { workspace = true, optional = true }
+tokio     = { workspace = true, optional = true }
+actix     = { workspace = true, optional = true }
+futures   = { workspace = true, optional = true }
+
+[dev-dependencies]
+app-kernel = { workspace = true, features = ["std", "async"] }
+tokio      = { workspace = true }
+actix      = { workspace = true }
+futures    = { workspace = true }

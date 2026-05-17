@@ -1,0 +1,39 @@
+language = "C"
+cpp_compat = false
+pragma_once = true
+no_includes = false
+header = ""
+after_includes = """
+"""
+includes = ["libapp_base.h"]
+#sys_includes = ["string.h", "pthread.h", "unistd.h", "sched.h"]
+
+[export]
+renaming_overrides_prefixing = true
+item_types = [
+  "globals",
+  "constants",
+  "enums",
+  "structs",
+  "unions",
+  "opaque",
+  "functions",
+  "typedefs",
+]
+exclude = ["rust_eh_personality", "_Unwind_Resume"]
+include = []
+
+[export.rename]
+Void = "void*"
+CStr = "char"
+str  = "uintptr_t[2]"
+
+[export.mangle]
+rename_types       = "SnakeCase"
+remove_underscores = false
+
+[fn]
+sort_by = "None"
+
+[struct]
+derive_constructor = true
