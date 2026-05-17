@@ -26,10 +26,12 @@ __app__ содержит модули:
 
 ### Сборка
 
-`make build-bin-app` - создание приложения app  
-`make build-lib-app-example-b no_std=1` - (создает libapp_b.so) пример модуля *MOD_B* с *no_std*  
-`make build-lib-app-example-a` - (создает libapp_a.so) пример асинхронного модуля *MOD_A* с работой бд
-__(зависит от libapp_b.so)__  
+- `make build-bin-app` - создание приложения app
+
+- `make build-lib-app-example-b no_std=1` - (создает libapp_b.so) пример модуля *MOD_B* с *no_std*
+
+- `make build-lib-app-example-a` - (создает libapp_a.so) пример асинхронного модуля *MOD_A* с работой бд
+__(зависит от libapp_b.so)__
 
 ### Команды
 
