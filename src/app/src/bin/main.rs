@@ -22,7 +22,7 @@ fn main() -> Void {
 #[cfg(not(feature = "std"))]
 #[unsafe(no_mangle)]
 fn main(argc: c_int, argv: *const *const c_char) -> c_int {
-    let res = App::new(&[MOD_MAIN], argc, argv)?.run(None).void();
+    let res = App::new(&[MOD_MAIN], argc, argv)?.run(None);
 
     if let Err(e) = res {
         eprintln!("Error: {e}");
