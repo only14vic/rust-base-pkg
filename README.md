@@ -28,9 +28,9 @@ __app__ содержит модули:
 
 - `make build-bin-app` - создание приложения app
 
-- `make build-lib-app-example-b no_std=1` - (создает libapp_b.so) пример модуля *MOD_B* с *no_std*
+- `make build-lib-app-example-b no_std=1` - (создает libapp_b.so) пример модуля __MOD_B__ с *no_std*
 
-- `make build-lib-app-example-a` - (создает libapp_a.so) пример асинхронного модуля *MOD_A* с работой бд
+- `make build-lib-app-example-a` - (создает libapp_a.so) пример асинхронного модуля __MOD_A__ с работой бд
 __(зависит от libapp_b.so)__
 
 ### Команды
@@ -46,6 +46,6 @@ __(зависит от libapp_b.so)__
 
 ### Примечание
 
-Здесь расположен только ознакомления код с примерами работы модулей.  
+В папке __src__ расположен неполный код, а только для ознакомления с примерами создания модулей в динамических библиотеках.  
 Полный исходный код находиться в пакете __rust-base-1.0.0-1-x86_64.pkg.tar.zst__
 в файле __/opt/rust-base/share/rust-base-src_1.0.0.tar.bz2__
